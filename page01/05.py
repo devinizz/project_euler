@@ -1,8 +1,4 @@
 from math import gcd
-ans = 1
-for i in range(1, 21):
-  ans = ans * i // gcd(ans, i)
+from functools import reduce
 
-print(ans)
-
-
+print(reduce(lambda x, y: x * y // gcd(x, y), range(1,21)))

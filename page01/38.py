@@ -7,7 +7,7 @@ def get(x):
     if count == 9:
       return r
     t = str(i * x)
-    for d in map(lambda c: int(c), t):
+    for d in map(int, t):
       if s[d] == 1:
         return 0
       s[d] = 1

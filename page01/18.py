@@ -1,3 +1,5 @@
+from functools import reduce
+
 t = '''75
 95 64
 17 47 82
@@ -13,11 +15,5 @@ t = '''75
 91 71 52 38 17 14 91 43 58 50 27 29 48
 63 66 04 68 89 53 67 30 73 16 69 87 40 31
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23'''
-t = list(map(lambda x: list(map(lambda y: int(y), x.split())), t.split('\n')))
-for i in range(1, len(t)):
-  t[i][0] += t[i-1][0]
-  t[i][i] += t[i-1][i-1]
-  for j in range(1, len(t[i]) - 1):
-    t[i][j] += max(t[i-1][j-1], t[i-1][j])
-
-print(max(t[len(t)-1]))
+t = list(map(lambda x: list(map(int, x.split())), t.split('\n')))
+print(max(reduce(lambda x, y: list(map(lambda a, b: a + b, map(max, [0] + x, x + [0]), y)), t)))

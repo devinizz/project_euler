@@ -12,7 +12,7 @@ def fun(b, n, c, a):
   return fun(b[3:], n, c, a) 
 
 f = open('59.txt', 'r')
-b = list(map(lambda x: int(x), f.read().split(',')))
+b = list(map(int, f.read().split(',')))
 p = [[i, j, k]
      for i in range(ord('a'), ord('z') + 1)
      for j in range(ord('a'), ord('z') + 1)

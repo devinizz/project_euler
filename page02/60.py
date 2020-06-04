@@ -20,9 +20,9 @@ for p in Prime.prime():
     if p * i > ans:
       break
     for s in clique[i]:
-      if len(list(filter(lambda x: mem(x), s))) == len(s):
+      if len(list(filter(mem, s))) == len(s):
         clique[i - 1].append(list(s) + [p])
   if len(clique[0]) > 0:
-    ans = min(ans, min(map(lambda x: sum(x), clique[0])))
+    ans = min(ans, min(map(sum, clique[0])))
 
 print(ans)

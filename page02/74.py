@@ -20,4 +20,4 @@ def fun(n):
 
   return g(n, [n])
 
-print(len(list(filter(lambda x: x == 60, map(lambda x: fun(x), range(1000000))))))
+print(len(list(filter(lambda x: x == 60, map(fun, range(1000000))))))

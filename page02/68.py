@@ -6,9 +6,9 @@ def fun(s):
   return r
 
 ans = max(map(lambda x: min(map(lambda n: x[n:] + x[:n], range(0, 15, 3))), 
-        filter(lambda x: set(x) == set(range(1,11)), map(lambda x: fun(x), 
-          filter(lambda x: 0 not in x and sum(x) % 5 == 0 and len(set(x)) == 5,
-            map(lambda x: list(map(lambda y: int(y), list(str(x)))), range(10000, 99999)))))))
+        filter(lambda x: set(x) == set(range(1,11)),
+          map(fun, filter(lambda x: 0 not in x and sum(x) % 5 == 0 and len(set(x)) == 5,
+            map(lambda x: list(map(int, list(str(x)))), range(10000, 99999)))))))
 for i in ans:
   print(i, end='')
 print("")

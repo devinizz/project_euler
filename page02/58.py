@@ -19,7 +19,7 @@ n = 1
 d = 0
 for s, l in f():
   n += 4 
-  d += len(list(filter(lambda x: isPrime(x), l)))
+  d += len(list(filter(isPrime, l)))
   if n > d * 10:
     print(s)
     break

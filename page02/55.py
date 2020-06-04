@@ -18,4 +18,4 @@ def f(n):
   
   return Lychrel(n + rev(n))
 
-print(len(list(filter(lambda x: f(x), range(10000)))))
+print(len(list(filter(f, range(10000)))))

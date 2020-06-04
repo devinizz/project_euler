@@ -1,5 +1,5 @@
 from math import factorial
-a = list(map(lambda x: factorial(x), range(10)))
+a = list(map(factorial, range(10)))
 ans = 0
 for i in range(10, factorial(9) * 7):
   orig = i

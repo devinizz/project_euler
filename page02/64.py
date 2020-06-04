@@ -10,4 +10,4 @@ def fun(x):
     if denominator == 1:
       return count
 
-print(len(list(filter(lambda x: x & 1 == 1, map(lambda x: fun(x), range(10001))))))
+print(len(list(filter(lambda x: x & 1 == 1, map(fun, range(10001))))))

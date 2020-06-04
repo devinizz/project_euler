@@ -1,7 +1,7 @@
 def f():
   n = 1
   while True:
-    for i in map(lambda c: int(c), str(n)):
+    for i in map(int, str(n)):
       yield i
     n += 1
 

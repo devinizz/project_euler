@@ -1,3 +1,5 @@
+from functools import reduce
+
 s = """
 73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
@@ -23,10 +25,6 @@ s = """
 s = list(filter(lambda x: x != '\n', s))
 ans = 0
 for i in range(988):
-  curr = 1
-  for j in s[i:i+13]:
-    curr *= int(j)
-  ans = max(ans, curr) 
+  ans = max(ans, reduce(lambda x, y: int(x) * int(y), s[i:i+13]))
 
 print(ans)
-  

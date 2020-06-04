@@ -13,7 +13,7 @@ def fun(nl, value, index):
       if i not in index and value[-1][2:] == v[:2]:
         if len(index) == 5:
           if v[2:] == value[0][:2]:
-            print(sum(map(lambda x: int(x), value + [v])))
+            print(sum(map(int, value + [v])))
           return
         tmp = nl.copy()
         tmp.remove(n)
